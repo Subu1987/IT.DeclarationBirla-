@@ -1,12 +1,14 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="IT.DeclarationBirla.controller.Main">
-	<Page title="Other Chapter VI-A Deduction" id="Sec80c">
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="IT.DeclarationBirla.controller.Sec80">
+	<Page title="Sec 80" id="Sec80">
 		<content>
 			<l:VerticalLayout class="sapUiContentPadding" width="100%">
-				<List items="{model3>/otherChapter}">
+				<List headerText="Total declared in ₹ | Max Limit in ₹ 1,00,000.00" items="{sec80>/}">
 					<items>
 						<InputListItem class="customtext">
-							<Text text="{model3>label}"></Text>
+							<Text text="{sec80>Icode}"></Text>
+								<Text text=" -- "></Text>
+							<Text text="{sec80>Itext}"></Text>
 							<Input class="Inputcustom" placeholder="₹ Enter Amount" value="" textAlign="Center"/>
 						</InputListItem>
 					</items>

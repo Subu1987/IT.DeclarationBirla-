@@ -70,10 +70,10 @@
 				}
 			},
 			"sec80c": {
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {},
-				"uri": "model/sec80c.json",
-				"preload": true
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"sec80": {
+				"type": "sap.ui.model.json.JSONModel"
 			},
 			"otherChapter": {
 				"type": "sap.ui.model.json.JSONModel",
@@ -112,16 +112,16 @@
 					"viewName": "Main",
 					"viewLevel": 0
 				},
-				"page2": {
+				"Sec80c": {
 					"viewType": "XML",
 					"transition": "flip",
 					"viewName": "Sec80c",
 					"viewLevel": 1
 				},
-				"page3": {
+				"Sec80": {
 					"viewType": "XML",
 					"transition": "flip",
-					"viewName": "OtherChapter",
+					"viewName": "Sec80",
 					"viewLevel": 1
 				}
 			}
