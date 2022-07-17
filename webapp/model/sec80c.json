@@ -1,0 +1,70 @@
+{
+	"sec80c" : [
+		    {
+			 "label": "80C 5 Years of Fixed Deposit in Scheduled Bank"
+		    },
+		    {
+			 "label": "80C Children Tuition Fees"
+		    },
+		    {
+			 "label": "80C Contribution to Pension Fund"
+		    },
+		    {
+			 "label": "80C Deposit in NSC"
+		    },
+		    {
+			 "label": "80C Deposit in NSS"
+		    },
+		    {
+			 "label": "80C Deposit in Post Office Savings Schemes"
+		    },
+			{	
+			 "label": "80C Equity Linked Savings Scheme (ELSS)"
+			},
+            {				
+			  "label": "80C Interest on NSC Reinvested"
+            },
+			{	
+			  "label": "80C Kisan Vikas Patra (KVP)"
+			},
+			{	
+			 "label": "80C Life Insurance Premium"
+			},
+            {				
+			 "label": "80C Long term Infrastructure Bonds"
+            },
+			{
+			 "label": "80C Mutual Funds"
+			},
+			{	
+			 "label": "80C NABARD Rural Bonds "
+			},
+			{	
+			 "label": "80C National Pension Scheme"
+			},
+			{	
+			 "label": "80C NHB Scheme"
+			},
+			{	
+			 "label": "80C Post office time deposit for 5 years"
+			},
+			{	
+			 "label": "80C Pradhan Mantri Suraksha Bima Yojana"
+			},
+			{	
+			 "label": "80C Public Provident Fund"
+			},
+			{	
+			 "label": "80C Repayment of Housing loan(Principal amount)"
+			},
+			{	
+			 "label": "80C Stamp duty and Registration Charges"
+			},
+			{	
+			 "label": "80C Sukanya Samriddhi Yojana"
+			},
+			{	
+			 "label": "80C Unit Linked Insurance Premium (ULIP)"
+			}
+	]
+}

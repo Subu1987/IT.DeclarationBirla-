@@ -1,0 +1,130 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "IT.DeclarationBirla",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZTAX_PLANNER_SRV": {
+				"uri": "/sap/opu/odata/sap/ZTAX_PLANNER_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "IT.DeclarationBirla.view.Main",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "IT.DeclarationBirla.i18n.i18n"
+				}
+			},
+			"sec80c": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/sec80c.json",
+				"preload": true
+			},
+			"otherChapter": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/otherChapter.json",
+				"preload": true
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZTAX_PLANNER_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"targetsClass": "sap.m.routing.Targets",
+				"viewPath": "IT.DeclarationBirla.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"viewType": "XML"
+			},
+			"targets": {
+				"Main": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "Main",
+					"viewLevel": 0
+				},
+				"page2": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "Sec80c",
+					"viewLevel": 1
+				},
+				"page3": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "OtherChapter",
+					"viewLevel": 1
+				}
+			}
+		}
+	}
+}

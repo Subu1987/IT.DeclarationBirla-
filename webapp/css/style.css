@@ -1,0 +1,21 @@
+/* Enter your custom styles here */
+.tileLayout.sapMGT{
+/*    background: #00bcd459;*/
+    box-shadow: 0 0 0 1px rgb(0 0 0);
+    transition: width 2s;
+}
+.tileLayout.sapMGT{
+    background: #dcfdfa;
+    width: 300px;
+}
+
+.sapUiIcon::before{
+    color:black;
+}
+.Inputcustom{
+    float:right;
+    width:20% !important;
+}
+.customtext div{
+    text-align:left;
+}

@@ -1,0 +1,85 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core" >
+ 
+    <Dialog title = "Sec 80C" id="formSec80c" contentWidth="80%" >
+    <l:Grid defaultSpan = "L12 M12 S12" width = "auto" id = "idGrid">
+    <l:content>
+        <f:SimpleForm id="SimpleFormDisplay354"
+            minWidth="100%"
+            maxContainerCols="2"
+            editable="false"
+            layout="ResponsiveGridLayout"
+            title="Total declared in ₹ | Max Limit in ₹ 1,50,000.00"
+            labelSpanL="1"
+            labelSpanM="1"
+            emptySpanL="1"
+            emptySpanM="1"
+            columnsL="0"
+            columnsM="0">
+            <f:content >
+                
+              
+<!--                    <core:Title text="group2"/>-->
+<!--                    <Label text="{model2>/sec80c/label}">
+                        <layoutData>
+                            <l:GridData span="L4 M5 S6"/>
+                        </layoutData>
+                    </Label>
+                    <Input id="payerFrom3" placeholder="₹ Enter Amount" required="true">
+                        <layoutData>
+                            <l:GridData span="L2 M1 S6"/>
+                        </layoutData>
+                    </Input>
+                    
+                    <Label text="{model2>/sec80c/label}">
+                        <layoutData>
+                            <l:GridData span="L4 M5 S6"/>
+                        </layoutData>
+                    </Label>
+                    <Input id="payerTo3" placeholder="₹ Enter Amount" required="true">
+                        <layoutData>
+                            <l:GridData span="L2 M1 S6"/>
+                        </layoutData>
+                    </Input>-->
+                    
+                    
+                    <Label text="80C Contribution to Pension Fund">
+                        <layoutData>
+                            <l:GridData span="L4 M5 S6"/>
+                        </layoutData>
+                    </Label>
+                    <Input id="payerFrom4" placeholder="₹ Enter Amount" required="true">
+                        <layoutData>
+                            <l:GridData span="L2 M1 S6"/>
+                        </layoutData>
+                    </Input>
+                    
+                    <Label text="80C Deposit in NSC">
+                        <layoutData>
+                            <l:GridData span="L4 M5 S6"/>
+                        </layoutData>
+                    </Label>
+                    <Input id="payerTo4" placeholder="₹ Enter Amount" required="true">
+                        <layoutData>
+                            <l:GridData span="L2 M1 S6"/>
+                        </layoutData>
+                    </Input>
+                    
+                    
+                    
+                    
+                    
+                    
+            </f:content>
+        </f:SimpleForm>
+    </l:content>
+    </l:Grid>
+    <buttons>
+    <Button text = "CLOSE" press = "closeDialog" type = "Reject"/>
+    <Button text = "SAVE" press = "onSave" type = "Accept"/>
+    </buttons>
+    </Dialog>
+</core:FragmentDefinition>

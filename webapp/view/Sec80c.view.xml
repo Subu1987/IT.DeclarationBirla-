@@ -1,0 +1,27 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="IT.DeclarationBirla.controller.Main">
+	<Page title="Sec 80C" id="Sec80c">
+		<content>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<List headerText="Total declared in ₹ | Max Limit in ₹ 1,50,000.00" items="{model2>/sec80c}">
+					<items>
+						<InputListItem class="customtext">
+							<Text text="{model2>label}"></Text>
+							<Input class="Inputcustom" placeholder="₹ Enter Amount" value="" textAlign="Center"/>
+						</InputListItem>
+					</items>
+				</List>
+			</l:VerticalLayout>
+		</content>
+		<!--footer for close button-->
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="Save" visible="{=${FormDataModel>/displayMode} !== 'D'}" press="onSalesOrderSave"/>
+					<Button text="Close" visible="{=${FormDataModel>/displayMode} === 'D'}" press="onClose"/>
+					<Button text="Display" visible="{=${FormDataModel>/displayMode} !== 'D'}" press="onSalesOrderDisplay"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

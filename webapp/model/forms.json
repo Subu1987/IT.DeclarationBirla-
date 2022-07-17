@@ -1,0 +1,33 @@
+{
+	"formCollection" : [
+		{
+			"icon" : "sap-icon://account",
+			"title" : "Sec 80C"
+		},
+		{
+			"icon" : "sap-icon://account",
+			"title" : "Sec 80"
+		},
+		{
+			"icon" : "sap-icon://e-learning",
+			"number" : "89",
+			"title" : "Other Chapter VI-A Deductions"
+		},
+		{
+		    "icon":"sap-icon://home",
+			"title" : "House Rent Allowance"
+		},
+		{
+			"icon" : "sap-icon://clinical-order",
+			"title" : "Medical(Sec 80D)"
+		},
+		{
+			"icon" : "sap-icon://capital-projects",
+			"title" : "Income/loss from House Property"
+		},
+		{
+			"icon" : "sap-icon://lead",
+			"title" : "Other Income"
+		}
+	]
+}

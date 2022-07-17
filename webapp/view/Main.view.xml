@@ -1,0 +1,82 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="IT.DeclarationBirla.controller.Main" displayBlock="true">
+	<App id="app">
+		<pages width="100%" height="100%">
+			<Page title="{i18n>title}">
+				<content>
+					<!--To give extra space-->
+					<Toolbar width="100%" id="__toolbar5" design="Info"/>
+					
+					<!--horizaontal box to holds the combobox-->
+					<HBox width="100%" id="__hbox0">
+						<items>
+							<HBox width="100%" id="__hbox2" direction="RowReverse" >
+								<items>
+									<ComboBox xmlns="sap.m" xmlns:sap.ui.core="sap.ui.core" items="{/YEARSet}" value="List Item 0" selectedItemId="__item0" id="__box0" textAlign="Center" class="sapUiTinyMarginEnd sapUiTinyMarginTop tileLayout">
+										<items>
+											<sap.ui.core:ListItem text="{Fiscal}" key="{SlNo}" id="__item0"/>
+											<sap.ui.core:ListItem text="{Fiscal}" key="{SlNo}" id="__item1"/>
+											<sap.ui.core:ListItem text="{Fiscal}" key="{SlNo}" id="__item2"/>
+										</items>
+									</ComboBox>
+								</items>
+							</HBox>
+						</items>
+					</HBox>
+					
+					<!--FlexBox for holding the tiles-->
+					<FlexBox width="100%" id="box1" wrap="Wrap" alignItems="Center" fitContainer="true" items="" justifyContent="SpaceAround" displayInline="true" alignContent="End" backgroundDesign="Solid" height="65%">
+						<items>
+						    <!--sec80c-->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="sec80c" subheader="">
+								<TileContent>
+									<Button text="Add to Declaration" id="sec80c" press="onPress"/>
+								</TileContent>
+							</GenericTile>
+							
+<!--							<GenericTile  class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="sec80" subheader="" >
+								<TileContent>
+									<Button text="Add to Declaration" id="sec80" press="onPress"></Button>
+								</TileContent>
+							</GenericTile>-->
+							
+							<!--otherchapter-->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Other Chapter VI-A Deductions" subheader="">
+								<TileContent>
+									<Button text="Add to Declaration" id="OtherChapter" press="onPress"/>
+								</TileContent>
+							</GenericTile>
+							
+							<!--houserent-->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="House Rent Allowance" subheader="">
+								<TileContent>
+									<Button text="Add to Declaration" id="HouseRent" press="onPress"/>
+								</TileContent>
+							</GenericTile>
+							
+							<!--medical(sec 80d)-->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Medical(Sec 80D)" subheader="">
+								<TileContent>
+									<Button text="Add to Declaration" id="Medical" press="onPress"/>
+								</TileContent>
+							</GenericTile>
+							
+							<!--income/loss-->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Income/loss from House Property" subheader="">
+								<TileContent>
+									<Button text="Add to Declaration" id="Incomeloss" press="onPress"/>
+								</TileContent>
+							</GenericTile>
+							
+							<!--otherincome-->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Other Income" subheader="">
+								<TileContent>
+									<Button text="Add to Declaration" id="OthereIncome" press="onPress"/>
+								</TileContent>
+							</GenericTile>
+						</items>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

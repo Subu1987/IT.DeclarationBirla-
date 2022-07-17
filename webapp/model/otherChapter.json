@@ -1,0 +1,58 @@
+{
+	"otherChapter" : [
+		    {
+			 "label": "80EE Additional Interest on housing loan borrowed as on 1st Apr 2016"
+		    },
+		    {
+			 "label": "80EEA Additional Interest on housing loan borrowed as on 1st Apr 2019"
+		    },
+		    {
+			 "label": "80EEB Interest on Electric Vehicle borrowed as on 1st Apr 2019"
+		    },
+		    {
+			 "label": "80CCD1(B) Contribution to NPS 2015"
+		    },
+		    {
+			 "label": "80TTB Interest on Deposit in Savings Account,FDs,Post Office And Cooperative Society for Senior Citizen"
+		    },
+		    {
+			 "label": "10(13) Superannuation Exemption"
+		    },
+			{	
+			 "label": "80G Donation- 100% Exemption"
+			},
+            {				
+			  "label": "80G Donation- 50% Exemption"
+            },
+			{	
+			  "label": "80G Donation- Children Education"
+			},
+			{	
+			 "label": "80G Donation- Political Parties"
+			},
+            {				
+			 "label": "80TTA Interest on Deposits in Savings Account,FDs,Post Office And Cooperative Society"
+            },
+			{
+			 "label": "80E Interest on Loan of higher self education"
+			},
+			{	
+			 "label": "80DD Medical Treatment/Insurance of handicapped Dependant"
+			},
+			{	
+			 "label": "80DD Medical Treatment/Insurance of handicapped Dependent(Severe)"
+			},
+			{	
+			 "label": "80DDB Medical Treatment(Specified Disease only)"
+			},
+			{	
+			 "label": "80DDB Medical Treatment(Specified Disease only)- Senior Citizen"
+			},
+			{	
+			 "label": "80U Permanent Phyical Disability(Above 80)"
+			},
+			{	
+			 "label": "80U Permanent Phyical Disability(Between 40%-80%)"
+			}
+	]
+}
