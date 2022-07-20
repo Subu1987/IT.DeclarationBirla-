@@ -3,13 +3,18 @@
 	<Page title="Sec 80" id="Sec80">
 		<content>
 			<l:VerticalLayout class="sapUiContentPadding" width="100%">
-				<List headerText="Total declared in ₹ | Max Limit in ₹ 1,00,000.00" items="{sec80>/}">
+				<List items="{sec80>/}">
+				    <headerToolbar>
+						<OverflowToolbar>
+							<Title text="Total declared in ₹ | Max Limit in ₹ 1,00,000.00" level="H2"/>
+							<ToolbarSpacer/>
+							<Text text="Year Selected {globalData>/selectedYear/yearText}"></Text>
+						</OverflowToolbar>
+					</headerToolbar>
 					<items>
-						<InputListItem class="customtext">
-							<Text text="{sec80>Icode}"></Text>
-								<Text text=" -- "></Text>
-							<Text text="{sec80>Itext}"></Text>
-							<Input class="Inputcustom" placeholder="₹ Enter Amount" value="" textAlign="Center"/>
+						<InputListItem class="customtext" label="{sec80>Icode} {sec80>Itext}">
+						
+							<Input class="Inputcustom" id="inputSec80" placeholder="₹ Enter Amount" value="" textAlign="Center"/>
 						</InputListItem>
 					</items>
 				</List>

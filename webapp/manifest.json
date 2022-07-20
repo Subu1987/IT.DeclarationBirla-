@@ -43,11 +43,11 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "IT.DeclarationBirla.view.Main",
+			"viewName": "IT.DeclarationBirla.view.App",
 			"type": "XML"
 		},
 		"dependencies": {
-			"minUI5Version": "1.30.0",
+			"minUI5Version": "1.48.0",
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {},
@@ -69,6 +69,9 @@
 					"bundleName": "IT.DeclarationBirla.i18n.i18n"
 				}
 			},
+			"globalData": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
 			"sec80c": {
 				"type": "sap.ui.model.json.JSONModel"
 			},
@@ -83,13 +86,12 @@
 			},
 			"": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneTime",
-					"defaultCountMode": "Request"
-				},
+				
 				"dataSource": "ZTAX_PLANNER_SRV",
 				"preload": true
+			},
+			"yearSet": {
+				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
 		"resources": {
@@ -99,12 +101,25 @@
 		},
 		"routing": {
 			"config": {
+			    "routerClass": "sap.m.routing.Router",
 				"targetsClass": "sap.m.routing.Targets",
 				"viewPath": "IT.DeclarationBirla.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"viewType": "XML"
 			},
+			"routes": [
+                    {
+                        "pattern": "",
+                        "name": "Main",
+                        "target": "Main"
+                    },
+                    {
+                        "pattern": "Sec80c",
+                        "name": "Sec80c",
+                        "target": "Sec80c"
+                    }
+                ],
 			"targets": {
 				"Main": {
 					"viewType": "XML",

@@ -19,13 +19,21 @@ sap.ui.define([
 		init: function() {
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
-
+            //this.oListSelector = new ListSelector();
+			//this._oErrorHandler = new ErrorHandler(this);
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
-			
+
 			// display the page1 
 			sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
-	        this.getTargets().display("Main");
-		}
+			//this.getTargets().display("Main");
+
+			// create the views based on the url/hash
+			this.getRouter().initialize();
+		},
+		destroy: function() {
+			// call the base component's destroy function
+			UIComponent.prototype.destroy.apply(this, arguments);
+		},
 	});
 });
