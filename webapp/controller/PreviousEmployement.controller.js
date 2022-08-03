@@ -6,32 +6,22 @@ sap.ui.define([
 ], function(Controller, JSONModel, Filter, MessageBox) {
 	"use strict";
 
-	return Controller.extend("IT.DeclarationBirla.controller.Sec80c", {
+	return Controller.extend("IT.DeclarationBirla.controller.PreviousEmployement", {
 
 		onInit: function() {
 			this.totalDeclaredAmount = 0;
 			this._oRouter = this.getOwnerComponent().getRouter();
-			this._oRouter.getRoute("Sec80c").attachPatternMatched(this._onRead80CDataSet, this);
-			//this.getRouter().getRoute("Sec80c").attachPatternMatched(this._onRead80CDataSet, this);
-		},
-		onChange: function(oEvent) {
-			var oData = this.getOwnerComponent().getModel('sec80c').getData();
-			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
-			oJsonGlobalData.oTotal80CDeclaredAmount = 0;
-			for (var i = 0; i < oData.length; i++) {
-				oJsonGlobalData.oTotal80CDeclaredAmount += Number(oData[i].Amount);
-			}
-			this.getOwnerComponent().getModel("globalData").setData(oJsonGlobalData);
-			//this.totalDeclaredAmount += Number(oEvent.getSource().getValue());
+			this._oRouter.getRoute("PreviousEmployement").attachPatternMatched(this._onReadPreviousEmployementDataSet, this);
+			
 		},
 
 		onSave: function() {
-			var dataArray = this.getOwnerComponent().getModel('sec80c').getData();
+			var dataArray = this.getOwnerComponent().getModel("PreviousEmployement").getData();
 			for (var i = 0; i < dataArray.length; i++) {
 				delete dataArray[i].__metadata;
 			}
-
-			var odata = {
+            this._onSavePreviousEmployementDataSet(dataArray);
+/*			var odata = {
 				"EmpNo": dataArray[0].EmpNo,
 				"ToEmp": dataArray
 			};
@@ -44,21 +34,21 @@ sap.ui.define([
 			     MessageBox.information("Total Amount can't be more than 1Lac 50k");
 			}else{
 			    this._onSave80CDataSet(odata);
-			}
+			}*/
 
 		},
 
-		_onSave80CDataSet: function(oData) {
+		_onSavePreviousEmployementDataSet: function(oData) {
 			var oModel = this.getOwnerComponent().getModel();
-			var oUrl = "/EmpDummySet";
+			var oUrl = "/TaxPreviousEmployment";
 			//var oPernerFilter = new sap.ui.model.Filter("Pernr", sap.ui.model.FilterOperator.EQ, '1000');
 			//var oFiscalYearFilter = new sap.ui.model.Filter("Fiscal", sap.ui.model.FilterOperator.EQ, '2022-2023');
-			oModel.create(oUrl, oData, {
+			oModel.create(oUrl, oData[0], {
 					success: function(response) {
-						MessageBox.information("The 80c data is saved");
+						MessageBox.information("The Previous Employement data is saved");
 					},
 					error: function(error) {
-						MessageBox.information("The 80c data is not saved");
+						MessageBox.information("The Previous Employement data is not saved");
 					}
 				}
 

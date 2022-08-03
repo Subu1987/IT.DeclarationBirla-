@@ -7,14 +7,14 @@
 					items="{sec80c>/}">
 					<headerToolbar>
 						<OverflowToolbar>
-							<Title text="Total declared in ₹ {globalData>/oTotal80CDeclaredAmount}| Max Limit in ₹ 1,50,000.00" level="H2"/>
+							<Title text="Total declared in ₹ {globalData>/oTotal80CDeclaredAmount} | Max Limit in ₹ 1,50,000.00" level="H2"/>
 							<ToolbarSpacer/>
 							<Text text="Year Selected {globalData>/selectedYear/yearText}"></Text>
 						</OverflowToolbar>
 					</headerToolbar>
 				
 					<items>
-						<InputListItem class="customtext" label="{sec80c>Icode} {sec80c>Itext}">
+						<InputListItem class="customtext" label="{sec80c>Icode}. {sec80c>Itext}">
 							
 							<Input class="Inputcustom" placeholder="₹ Enter Amount" type="Number" value="{sec80c>Amount}" textAlign="Left" change="onChange"/>
 						</InputListItem>

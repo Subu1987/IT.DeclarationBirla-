@@ -14,21 +14,21 @@
 			</Toolbar>
 			<!--horizaontal box to holds the combobox-->
 			<HBox id="__hbox2">
-				<Image src="image/homeImage.jpg" height="100%" width="100%"></Image>
+				<Image src="image/homeImage.jpg" height="100%" width="100%"/>
 			</HBox>
 			<!--FlexBox for holding the tiles-->
-			<FlexBox width="100%" id="box1" wrap="Wrap" alignItems="Start" fitContainer="true" justifyContent="SpaceAround" displayInline="true"
-				 backgroundDesign="Solid">
+			<FlexBox width="100%" id="box1" alignItems="Start" justifyContent="SpaceAround" backgroundDesign="Solid" alignContent="Start"
+				displayInline="true" wrap="Wrap" height="auto" fitContainer="true">
 				<items>
 					<!--sec80c-->
 					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{sec80c}'}" id="sec80c"
-						header="Section 80c" subheader="Add to Declaration" press="onPress"></GenericTile>
+						header="Section 80c" subheader="Add to Declaration" press="onPress"/>
 					<!--otherchapter-->
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{sec80}'}" id="OtherChapter"
-						press="onPress" header="Section 80" subheader="Add to Declaration"></GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{sec80}'}" id="sec80"
+						press="onPress" header="Section 80" subheader="Add to Declaration"/>
 					<!--houserent-->
 					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{HouseRent}'}" id="HouseRent"
-						press="onPress" header="House Rent Allowance" subheader="Add to Declaration"></GenericTile>
+						press="onPress" header="House Rent Allowance" subheader="Add to Declaration"/>
 					<!--medical(sec 80d)-->
 					<!--<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{Medical}'}" id="Medical"
 				press="onPress" header="Medical(Sec 80D)" subheader="Add to Declaration"></GenericTile>-->
@@ -36,8 +36,12 @@
 					<!--<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{Incomeloss}'}" id="Incomeloss"
 				press="onPress" header="Income/loss from House Property" subheader="Add to Declaration"></GenericTile>-->
 					<!--otherincome-->
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{OthereIncome}'}"
-						id="OthereIncome" press="onPress" header="Other Income" subheader="Add to Declaration"></GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{PreviousEmployement}'}"
+						id="PreviousEmployment" press="onPress" header="Previous Employment Tax Details" subheader="Add to Declaration"/>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{HouseProperty}'}"
+						id="HouseProperty" press="onPress" header="Income from House Property" subheader="Add to Declaration"/>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" customData="{key:'tileId', value: '{OtherSources}'}"
+						id="OtherSources" press="onPress" header="Income from Other Sources" subheader="Add to Declaration"/>
 				</items>
 			</FlexBox>
 		</content>

@@ -6,7 +6,7 @@ sap.ui.define([
 	"sap/ui/core/EventBus",
 	"sap/m/MessageBox",
 	"sap/m/MessageToast"
-], function(Controller, UIComponent, JSONModel, Filter, EventBus, MessageBox,MessageToast) {
+], function(Controller, UIComponent, JSONModel, Filter, EventBus, MessageBox, MessageToast) {
 	"use strict";
 
 	return Controller.extend("IT.DeclarationBirla.controller.Main", {
@@ -17,6 +17,8 @@ sap.ui.define([
 			this._onInitilization();
 			this._onReadYearSet();
 		},
+
+		// initial yearSet
 		_onReadYearSet: function() {
 			var that = this;
 			var oModel = this.getOwnerComponent().getModel();
@@ -34,6 +36,8 @@ sap.ui.define([
 				error: function(error) {}
 			});
 		},
+
+		// section 80C
 		_onRead80CDataSet: function() {
 			var that = this;
 			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
@@ -60,13 +64,15 @@ sap.ui.define([
 				}
 			});
 		},
+
+		// section 80
 		_onRead80DataSet: function() {
 			var that = this;
 			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
 			var oModel = this.getOwnerComponent().getModel();
 			var oPernerFilter = new sap.ui.model.Filter("Pernr", sap.ui.model.FilterOperator.EQ, '1000');
 			var oFiscalYearFilter = new sap.ui.model.Filter("Fiscal", sap.ui.model.FilterOperator.EQ, oJsonGlobalData.selectedYear.yearText);
-			var oUrl = "/TAX_80Set";
+			var oUrl = "/Tax80";
 
 			oModel.read(oUrl, {
 				filters: [oPernerFilter, oFiscalYearFilter],
@@ -74,7 +80,7 @@ sap.ui.define([
 					var data = response.results;
 					var oJsonSec80Model = that.getOwnerComponent().getModel("sec80");
 					oJsonSec80Model.setData(data);
-					
+
 				},
 				error: function(error) {
 					//console.log(error);
@@ -82,6 +88,55 @@ sap.ui.define([
 				}
 			});
 		},
+
+		// House rent allowance
+		_onReadHRADataSet: function() {
+			var that = this;
+			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
+			var oModel = this.getOwnerComponent().getModel();
+			var oPersonlNoFilter = new sap.ui.model.Filter("personnelNo", sap.ui.model.FilterOperator.EQ, "1003");
+			var oFiscalYearFilter = new sap.ui.model.Filter("fiscalYear", sap.ui.model.FilterOperator.EQ, oJsonGlobalData.selectedYear.yearText);
+			var oUrl = "/TaxHouseRentAllowance";
+
+			oModel.read(oUrl, {
+				filters: [oPersonlNoFilter, oFiscalYearFilter],
+				success: function(response) {
+					var data = response.results;
+					console.log(data);
+					var oJsonHRAModel = that.getOwnerComponent().getModel("HRA");
+					oJsonHRAModel.setData(data);
+
+				},
+				error: function(error) {
+
+				}
+			});
+
+		},
+		_onReadPreviousEmployementDataSet: function() {
+			var that = this;
+			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
+			var oModel = this.getOwnerComponent().getModel();
+			var oPersonlNoFilter = new sap.ui.model.Filter("personnelNo", sap.ui.model.FilterOperator.EQ, "1000");
+			var oFiscalYearFilter = new sap.ui.model.Filter("fiscalYear", sap.ui.model.FilterOperator.EQ, oJsonGlobalData.selectedYear.yearText);
+			var oUrl = "/TaxPreviousEmployment";
+
+			oModel.read(oUrl, {
+				filters: [oPersonlNoFilter, oFiscalYearFilter],
+				success: function(response) {
+					var data = response.results;
+					console.log(data);
+					var oJsonPreviousEmployementModel = that.getOwnerComponent().getModel("PreviousEmployement");
+					oJsonPreviousEmployementModel.setData(data);
+
+				},
+				error: function(error) {
+
+				}
+			});
+
+		},
+
 		// onPress button
 		onPress: function(oEvent, oData) {
 			var oSelectedYear = this.getOwnerComponent().getModel("globalData").getData().selectedYear;
@@ -94,7 +149,18 @@ sap.ui.define([
 				this._onRead80CDataSet();
 				this.getOwnerComponent().getTargets().display("Sec80c");
 			} else if (oHeaderText === "sec80") {
+				this._onRead80DataSet();
 				this.getOwnerComponent().getTargets().display("Sec80");
+			} else if (oHeaderText === "HouseRent") {
+				this._onReadHRADataSet();
+				this.getOwnerComponent().getTargets().display("HouseRent");
+			} else if (oHeaderText === "PreviousEmployement") {
+			    this._onReadPreviousEmployementDataSet();
+				this.getOwnerComponent().getTargets().display("PreviousEmployement");
+			} else if (oHeaderText === "HouseProperty") {
+				this.getOwnerComponent().getTargets().display("HouseProperty");
+			} else if (oHeaderText === "OtherSources") {
+				this.getOwnerComponent().getTargets().display("OtherSources");
 			}
 		},
 		_onInitilization: function() {

@@ -78,15 +78,16 @@
 			"sec80": {
 				"type": "sap.ui.model.json.JSONModel"
 			},
-			"otherChapter": {
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {},
-				"uri": "model/otherChapter.json",
-				"preload": true
+			"HRA": {
+				"type": "sap.ui.model.json.JSONModel"
 			},
+			"PreviousEmployement": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+
 			"": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
-				
+
 				"dataSource": "ZTAX_PLANNER_SRV",
 				"preload": true
 			},
@@ -101,25 +102,34 @@
 		},
 		"routing": {
 			"config": {
-			    "routerClass": "sap.m.routing.Router",
+				"routerClass": "sap.m.routing.Router",
 				"targetsClass": "sap.m.routing.Targets",
 				"viewPath": "IT.DeclarationBirla.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"viewType": "XML"
 			},
-			"routes": [
-                    {
-                        "pattern": "",
-                        "name": "Main",
-                        "target": "Main"
-                    },
-                    {
-                        "pattern": "Sec80c",
-                        "name": "Sec80c",
-                        "target": "Sec80c"
-                    }
-                ],
+			"routes": [{
+				"pattern": "",
+				"name": "Main",
+				"target": "Main"
+			}, {
+				"pattern": "Sec80c",
+				"name": "Sec80c",
+				"target": "Sec80c"
+			}, {
+				"pattern": "Sec80",
+				"name": "Sec80",
+				"target": "Sec80"
+			}, {
+				"pattern": "HouseRent",
+				"name": "HouseRent",
+				"target": "HouseRent"
+			}, {
+				"pattern": "PreviousEmployement",
+				"name": "PreviousEmployement",
+				"target": "PreviousEmployement"
+			}],
 			"targets": {
 				"Main": {
 					"viewType": "XML",
@@ -137,6 +147,30 @@
 					"viewType": "XML",
 					"transition": "flip",
 					"viewName": "Sec80",
+					"viewLevel": 1
+				},
+				"HouseRent": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "HouseRent",
+					"viewLevel": 1
+				},
+				"PreviousEmployement": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "PreviousEmployement",
+					"viewLevel": 1
+				},
+				"HouseProperty": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "HouseProperty",
+					"viewLevel": 1
+				},
+				"OtherSources": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "OtherSources",
 					"viewLevel": 1
 				}
 			}

@@ -1,21 +1,49 @@
 /* Enter your custom styles here */
-.tileLayout.sapMGT{
-/*    background: #00bcd459;*/
+
+.tileLayout.sapMGT {
+    /*    background: #00bcd459;*/
     box-shadow: 0 0 0 1px rgb(0 0 0);
     transition: width 2s;
 }
-.tileLayout.sapMGT{
+
+.tileLayout.sapMGT {
     background: #dcfdfa;
     width: 300px;
 }
 
-.sapUiIcon::before{
-    color:black;
+.sapUiIcon::before {
+    color: black;
 }
-.Inputcustom{
-    float:right;
+
+.Inputcustom {
+    float: right;
     width: 200px !important;
 }
-.customtext div{
-    text-align:left;
+
+.customtext div {
+    text-align: left;
+}
+
+.sapUiRFLRow .label {
+    min-width: 500px !important;
+    width: 60% !important;
+    float: left !important;
+}
+
+.sapUiFormResLayout .sapUiRFLRow:first-child>.sapUiRFLContainer:first-child>.sapUiRFLContainerContent>.sapMLabel {
+    text-align: left !important;
+    font-size: 1rem;
+    color: #0e0e0e;
+}
+
+.sapUiRFLRow .input {
+    min-width: 350px;
+    width: 40% !important;
+    float: right !important;
+}
+
+.input .sapMInputBaseInner{
+    width: 200px;
+    float: right;
+    text-align: end;
 }
