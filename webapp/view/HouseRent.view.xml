@@ -26,58 +26,65 @@
 								<Label text="personnelNo" id="__label2"/>
 							</header>
 						</Column>
+						<Column>
+							<header>
+								<Label text="Edit" id="__label21"/>
+							</header>
+						</Column>
 					</columns>
 					<items>
 						<ColumnListItem id="__item0">
 							<cells>
-								<Text text="{HRA>startDate}" id="__text0"/>
-								<Text text="{HRA>endDate}" id="__text1"/>
-								<Text text="{HRA>personnelNo}" id="__text2"/></cells>
+								<Text text="{HRA>startDate}"/>
+								<Text text="{HRA>endDate}"/>
+								<Text text="{HRA>personnelNo}"/>
+								<Button text="Edit" width="100px" class="sapUiTinyMarginTop" press="onEdit"/>
+							</cells>
 						</ColumnListItem>
 					</items>
 				</Table>
-				<HBox width="100%" id="__hbox0">
-					<items>
-						<Button class="sapUiTinyMarginEnd sapUiTinyMarginTop" text="Create" width="100px" id="__button3"/>
-						<Button class="sapUiTinyMarginStart sapUiTinyMarginTop" text="Display" width="100px" id="__button4"/>
-					</items>
-				</HBox>
-			</VBox>
-			<VBox width="40%" id="__vbox" direction="Row" alignContent="Start" alignItems="Center" wrap="Wrap" justifyContent="SpaceAround">
+				<!--			<HBox width="100%" id="__hbox0">
 				<items>
-					<Label text="From"/>
-					<Input value=""/>
-					<Label text="To"/>
-					<Input value=""/> 
+					<Button class="sapUiTinyMarginEnd sapUiTinyMarginTop" text="Create" width="100px" id="__button3"/>
+					<Button class="sapUiTinyMarginStart sapUiTinyMarginTop" text="Display" width="100px" id="__button4"/>
 				</items>
+			</HBox>-->
 			</VBox>
-			<VBox width="100%" direction="Column" id="__vbox3" items="{HRA>/}">
-				<f:Form id="FormToolbar" editable="true" ariaLabelledBy="Title1" title="Housing(HRA/CLA/COA)">
+			<VBox width="40%" id="__vbo0" direction="Row" alignContent="Start" alignItems="Center" wrap="Wrap" justifyContent="SpaceAround"
+				class="sapUiTinyMarginTop">
+				<Label text="From"/>
+				<Text text="{HRA>/0/startDate}"/>
+				<Label text="To"/>
+				<Text text="{HRA>/0/endDate}"/>
+			</VBox>
+			<VBox width="100%"  direction="Column" id="__vbox3">
+				<f:Form id="HouseRentForm" editable="false" ariaLabelledBy="Title1" title="Housing(HRA/CLA/COA)">
 					<f:layout>
 						<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
 							emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
 					</f:layout>
-					<f:formContainers >
+					<f:formContainers>
 						<f:FormContainer title="Housing Details">
 							<f:formElements>
 								<f:FormElement label="Housing Type">
 									<f:fields>
-                                        <Input value="{HRA>housingType}" />
+										<Input visible="{globalData>/oEditableFlagTrue}" value="{HRA>/0/housingType}"/>
+										<Text visible="{globalData>/oEditableFlagFalse}" text="{HRA>/0/housingType}"></Text>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="City Category">
 									<f:fields>
-                                        <Input value="{HRA>cityCategory}" />
+										<Input value="{HRA>/0/cityCategory}"/>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="Rent Amount">
 									<f:fields>
-										<Input value="{HRA>rentAmount}">
+										<Input value="{HRA>/0/rentAmount}">
 											<layoutData>
 												<l:GridData span="XL2 L1 M3 S4"/>
 											</layoutData>
 										</Input>
-										<Text text="{HRA>currency}"/>
+										<Text text="{HRA>/0/currency}"/>
 										<CheckBox id="__box0" text="HRA to be Tax Exempt" textDirection="LTR"/>
 									</f:fields>
 								</f:FormElement>
@@ -87,23 +94,23 @@
 							<f:formElements>
 								<f:FormElement label="Number of Helpers">
 									<f:fields>
-										<Input value="{HRA>numberOfHelpers}"/>
+										<Input value="{HRA>/0/numberOfHelpers}"/>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="Helper Cost">
 									<f:fields>
-										<Input value="{HRA>helperCost}" />
-										<Text text="{HRA>currency}"/>
+										<Input value="{HRA>/0/helperCost}"/>
+										<Text text="{HRA>/0/currency}"/>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="Total Furniture Value">
 									<f:fields>
-										<Input value="{HRA>furnitureValue}"/>
+										<Input value="{HRA>/0/furnitureValue}"/>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="Furniture Hiring Charges">
 									<f:fields>
-										<Input value="{HRA>furnitureHiringCharges}" id="twitterss"/>
+										<Input value="{HRA>/0/furnitureHiringCharges}" id="twitterss"/>
 									</f:fields>
 								</f:FormElement>
 							</f:formElements>
@@ -112,19 +119,19 @@
 							<f:formElements>
 								<f:FormElement label="Landlord's Name">
 									<f:fields>
-										<Input value="{HRA>landlordName}"/>
+										<Input value="{HRA>/0/landlordName}"/>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="Landlord's Address">
 									<f:fields>
-										<Input value="{HRA>landlordAddress1}" />
-										<Input value="{HRA>landlordAddress2}"/>
-										<Input value="{HRA>landlordAddress3}"/>
+										<Input value="{HRA>/0/landlordAddress1}"/>
+										<Input value="{HRA>/0/landlordAddress2}"/>
+										<Input value="{HRA>/0/landlordAddress3}" editable="false"/>
 									</f:fields>
 								</f:FormElement>
 								<f:FormElement label="PAN of Landlord">
 									<f:fields>
-										<Input value="{HRA>landlordPanNumber}"/>
+										<Input value="{HRA>/0/landlordPanNumber}"/>
 										<CheckBox id="__box10" text="Declaration Provided by Landlord" textDirection="LTR"/>
 									</f:fields>
 								</f:FormElement>
@@ -134,7 +141,7 @@
 							<f:formElements>
 								<f:FormElement label="Particulars">
 									<f:fields>
-										<Input value="{HRA>particulars}"/>
+										<Input value="{HRA>/0/particulars}"/>
 									</f:fields>
 								</f:FormElement>
 							</f:formElements>

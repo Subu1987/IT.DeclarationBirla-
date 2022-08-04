@@ -70,7 +70,7 @@ sap.ui.define([
 			var that = this;
 			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
 			var oModel = this.getOwnerComponent().getModel();
-			var oPernerFilter = new sap.ui.model.Filter("Pernr", sap.ui.model.FilterOperator.EQ, '1000');
+			var oPernerFilter = new sap.ui.model.Filter("Pernr", sap.ui.model.FilterOperator.EQ, "1000");
 			var oFiscalYearFilter = new sap.ui.model.Filter("Fiscal", sap.ui.model.FilterOperator.EQ, oJsonGlobalData.selectedYear.yearText);
 			var oUrl = "/Tax80";
 
@@ -94,7 +94,7 @@ sap.ui.define([
 			var that = this;
 			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
 			var oModel = this.getOwnerComponent().getModel();
-			var oPersonlNoFilter = new sap.ui.model.Filter("personnelNo", sap.ui.model.FilterOperator.EQ, "1003");
+			var oPersonlNoFilter = new sap.ui.model.Filter("personnelNo", sap.ui.model.FilterOperator.EQ, "1000");
 			var oFiscalYearFilter = new sap.ui.model.Filter("fiscalYear", sap.ui.model.FilterOperator.EQ, oJsonGlobalData.selectedYear.yearText);
 			var oUrl = "/TaxHouseRentAllowance";
 
@@ -125,9 +125,122 @@ sap.ui.define([
 				filters: [oPersonlNoFilter, oFiscalYearFilter],
 				success: function(response) {
 					var data = response.results;
-					console.log(data);
+					//console.log(data.length);
+/*					if (data.length && data.length === 0) {
+						data.push({
+							"LTACarriedForward": "",
+							"LTAExemptionsAvailed": "",
+							"currency": "INR",
+							"educationCessDeducted": " ",
+							"employeeNPSBasis": "",
+							"employeeNPSContribution": "",
+							"employeeProvidentFund": "",
+							"employerNPSBasis": "",
+							"employerNPSContribution": "",
+							"endDate": "",
+							"exemptionUnderSection10": "",
+							"fiscalYear": "",
+							"gratuityExemptionAmount": "",
+							"grossSalaryPreviousEmployment": "",
+							"incomeTaxDeducted": "",
+							"incomeTaxDeductedIncludeCessSurcharge": "",
+							"leaveEncashmentExemptionAmount": "",
+							"medicalExemptionAvailed": "",
+							"personnelNo": "",
+							"prerquisiteAmountUnderSection17": "",
+							"professionalTaxPaid": "",
+							"profitInLieuSalaryUnderSection17": "",
+							"retrenchmentExemptionAmount": "",
+							"sequenceNo": "",
+							"startDate": "",
+							"surchargeDeducted": "",
+							"voluntaryRetirementSchemeAmount": ""
+						});
+					}*/
 					var oJsonPreviousEmployementModel = that.getOwnerComponent().getModel("PreviousEmployement");
 					oJsonPreviousEmployementModel.setData(data);
+
+				},
+				error: function(error) {
+
+	/*				var data = [];
+                    var dummyData = {
+							"LTACarriedForward": "",
+							"LTAExemptionsAvailed": "",
+							"currency": "INR",
+							"educationCessDeducted": " ",
+							"employeeNPSBasis": "",
+							"employeeNPSContribution": "",
+							"employeeProvidentFund": "",
+							"employerNPSBasis": "",
+							"employerNPSContribution": "",
+							"endDate": "",
+							"exemptionUnderSection10": "",
+							"fiscalYear": "",
+							"gratuityExemptionAmount": "",
+							"grossSalaryPreviousEmployment": "",
+							"incomeTaxDeducted": "",
+							"incomeTaxDeductedIncludeCessSurcharge": "",
+							"leaveEncashmentExemptionAmount": "",
+							"medicalExemptionAvailed": "",
+							"personnelNo": "",
+							"prerquisiteAmountUnderSection17": "",
+							"professionalTaxPaid": "",
+							"profitInLieuSalaryUnderSection17": "",
+							"retrenchmentExemptionAmount": "",
+							"sequenceNo": "",
+							"startDate": "",
+							"surchargeDeducted": "",
+							"voluntaryRetirementSchemeAmount": ""
+						};
+					if (data.length && data.length === 0) {
+						data.push(dummyData);
+					}
+					var oJsonPreviousEmployementModel = that.getOwnerComponent().getModel("PreviousEmployement");
+					oJsonPreviousEmployementModel.setData(data);*/
+
+				}
+			});
+
+		},
+		_onReadHousePropertyDataSet: function() {
+			var that = this;
+			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
+			var oModel = this.getOwnerComponent().getModel();
+			var oPersonlNoFilter = new sap.ui.model.Filter("personnelNo", sap.ui.model.FilterOperator.EQ, "1000");
+			var oFiscalYearFilter = new sap.ui.model.Filter("fiscalYear", sap.ui.model.FilterOperator.EQ, oJsonGlobalData.selectedYear.yearText);
+			var oUrl = "/TaxHouseProperty";
+
+			oModel.read(oUrl, {
+				filters: [oPersonlNoFilter, oFiscalYearFilter],
+				success: function(response) {
+					var data = response.results;
+					console.log(data);
+					var oJsonHousePropertyModel = that.getOwnerComponent().getModel("HouseProperty");
+					oJsonHousePropertyModel.setData(data);
+
+				},
+				error: function(error) {
+
+				}
+			});
+
+		},
+		_onReadOtherSourcesDataSet: function() {
+			var that = this;
+			var oJsonGlobalData = this.getOwnerComponent().getModel("globalData").getData();
+			var oModel = this.getOwnerComponent().getModel();
+			var oPersonlNoFilter = new sap.ui.model.Filter("personnelNo", sap.ui.model.FilterOperator.EQ, "1000");
+			var oFiscalYearFilter = new sap.ui.model.Filter("fiscalYear", sap.ui.model.FilterOperator.EQ, oJsonGlobalData.selectedYear.yearText);
+			var oUrl = "/TaxOtherSources";
+
+			oModel.read(oUrl, {
+				filters: [oPersonlNoFilter, oFiscalYearFilter],
+				success: function(response) {
+					var data = response.results;
+					console.log(data);
+					var oJsonOtherSourcesModel = that.getOwnerComponent().getModel("OtherSources");
+					oJsonOtherSourcesModel.setData(data);
 
 				},
 				error: function(error) {
@@ -155,11 +268,13 @@ sap.ui.define([
 				this._onReadHRADataSet();
 				this.getOwnerComponent().getTargets().display("HouseRent");
 			} else if (oHeaderText === "PreviousEmployement") {
-			    this._onReadPreviousEmployementDataSet();
+				this._onReadPreviousEmployementDataSet();
 				this.getOwnerComponent().getTargets().display("PreviousEmployement");
 			} else if (oHeaderText === "HouseProperty") {
+				this._onReadHousePropertyDataSet();
 				this.getOwnerComponent().getTargets().display("HouseProperty");
 			} else if (oHeaderText === "OtherSources") {
+				this._onReadOtherSourcesDataSet();
 				this.getOwnerComponent().getTargets().display("OtherSources");
 			}
 		},

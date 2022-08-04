@@ -84,7 +84,12 @@
 			"PreviousEmployement": {
 				"type": "sap.ui.model.json.JSONModel"
 			},
-
+			"HouseProperty": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"OtherSources": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
 			"": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
 
@@ -129,6 +134,14 @@
 				"pattern": "PreviousEmployement",
 				"name": "PreviousEmployement",
 				"target": "PreviousEmployement"
+			}, {
+				"pattern": "HouseProperty",
+				"name": "HouseProperty",
+				"target": "HouseProperty"
+			}, {
+				"pattern": "OtherSources",
+				"name": "OtherSources",
+				"target": "OtherSources"
 			}],
 			"targets": {
 				"Main": {

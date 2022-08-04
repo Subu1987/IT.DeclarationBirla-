@@ -2,13 +2,14 @@
 	<Page title="Previous Employment Tax Details" id="PreviousEmployement">
 		<content>
 			
-			<VBox width="40%" id="__vbox0" direction="Row" alignContent="Start" alignItems="Center" wrap="Wrap" justifyContent="SpaceAround" items="{PreviousEmployement>/}">
-				<items>
+			<VBox width="40%" id="__vbox0" direction="Row" alignContent="Start" alignItems="Center" wrap="Wrap" justifyContent="SpaceAround" class="sapUiTinyMarginTop">
+				
 					<Label text="From"/>
-					<Input value="{PreviousEmployement>startDate}"/>
+					<Text text="{PreviousEmployement>/0/startDate}"/>
 					<Label text="To"/>
-					<Input value="{PreviousEmployement>endDate}"/>
-				</items>
+					<Text text="{PreviousEmployement>/0/endDate}"/>
+					<Button text="Edit" width="100px" class="sapUiTinyMarginEnd "/>
+				
 			</VBox>
 			<VBox width="100%" direction="Column" id="__vbox3" items="{PreviousEmployement>/}">
 				<f:Form id="FormToolbar" editable="true" ariaLabelledBy="Title1">

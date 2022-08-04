@@ -1,12 +1,15 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="IT.DeclarationBirla.controller.Main">
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="IT.DeclarationBirla.controller.OtherSources">
 	<Page title="Income From Other Sources" id="OtherSources">
 		<content>
-			<VBox width="40%" id="__vbox0" direction="Row" alignContent="Start" alignItems="Center" wrap="Wrap" justifyContent="SpaceAround">
-				<Label text="From"/>
-				<Input value=""/>
-				<Label text="To"/>
-				<Input value=""/>
+			<VBox width="40%" id="__vbox0" direction="Row" alignContent="Start" alignItems="Center" wrap="Wrap" justifyContent="SpaceAround" class="sapUiTinyMarginTop">
+				
+					<Label text="From"/>
+					<Text text="{OtherSources>/0/startDate}"/>
+					<Label text="To"/>
+					<Text text="{OtherSources>/0/endDate}"/>
+					<Button text="Edit" width="100px" class="sapUiTinyMarginEnd "/>
+				
 			</VBox>
 			<VBox width="100%" direction="Column" id="__vbox3">
 				<f:Form id="FormToolbar" editable="true" ariaLabelledBy="Title1">
@@ -19,7 +22,7 @@
 							<f:formElements>
 								<f:FormElement label="Business profits">
 									<f:fields>
-										<Input value="" id="url"/>
+										<Input value="{OtherSources>/0/businessProfessionProfits}" id="url"/>
 										<Text text="INR"/>
 									</f:fields>
 								</f:FormElement>
@@ -27,7 +30,7 @@
 							<f:formElements>
 								<f:FormElement label="Long Term Capital Gains">
 									<f:fields>
-										<Input value="" id="urla"/>
+										<Input value="{OtherSources>/0/longTermCapitalGainNormal}" id="urla"/>
 										<Text text="INR"/>
 										<Text text="Normal Rate"/>
 									</f:fields>
@@ -36,7 +39,7 @@
 							<f:formElements>
 								<f:FormElement label="Long Term Capital Gains">
 									<f:fields>
-										<Input value="" id="urla1"/>
+										<Input value="{OtherSources>/0/longTermCapitalGainSpecial}" id="urla1"/>
 										<Text text="INR"/>
 										<Text text="Special Rate"/>
 									</f:fields>
@@ -45,7 +48,7 @@
 							<f:formElements>
 								<f:FormElement label="Short Term Capital Gains">
 									<f:fields>
-										<Input value=""/>
+										<Input value="{OtherSources>/0/shortTermCapitalGain}"/>
 										<Text text="INR"/>
 									</f:fields>
 								</f:FormElement>
@@ -53,7 +56,7 @@
 							<f:formElements>
 								<f:FormElement label="Short Term Capital Gains">
 									<f:fields>
-										<Input value=""/>
+										<Input value="{OtherSources>/0/shortTermCapitalGains}"/>
 										<Text text="INR"/>
 										<Text text="Listed Securities"/>
 									</f:fields>
@@ -62,7 +65,7 @@
 							<f:formElements>
 								<f:FormElement label="Income from Dividend">
 									<f:fields>
-										<Input value="" id="urla10"/>
+										<Input value="{OtherSources>/0/incomeFromDividends}" id="urla10"/>
 										<Text text="INR"/>
 									</f:fields>
 								</f:FormElement>
@@ -70,7 +73,7 @@
 							<f:formElements>
 								<f:FormElement label="Income from Interest">
 									<f:fields>
-										<Input value=""/>
+										<Input value="{OtherSources>/0/incomeFromInterest}"/>
 										<Text text="INR"/>
 									</f:fields>
 								</f:FormElement>
@@ -78,7 +81,7 @@
 							<f:formElements>
 								<f:FormElement label="Other Income(Unspecified)">
 									<f:fields>
-										<Input value=""/>
+										<Input value="{OtherSources>/0/incomeFromOtherSources}"/>
 										<Text text="INR"/>
 									</f:fields>
 								</f:FormElement>
@@ -86,7 +89,7 @@
 							<f:formElements>
 								<f:FormElement label="TDS on Other Income">
 									<f:fields>
-										<Input value=""/>
+										<Input value="{OtherSources>/0/TDSOtherSource}"/>
 										<Text text="INR"/>
 									</f:fields>
 								</f:FormElement>
@@ -100,7 +103,7 @@
 		<footer>
 			<Bar>
 				<contentRight>
-					<Button text="Save" visible="{=${FormDataModel>/displayMode} !== 'D'}" press="onSalesOrderSave"/>
+					<Button text="Save" visible="{=${FormDataModel>/displayMode} !== 'D'}" press="onSave"/>
 					<Button text="Close" visible="{=${FormDataModel>/displayMode} === 'D'}" press="onClose"/>
 					<Button text="Display" visible="{=${FormDataModel>/displayMode} !== 'D'}" press="onSalesOrderDisplay"/>
 				</contentRight>
